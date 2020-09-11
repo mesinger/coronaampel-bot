@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Mesi.Covid.Austria.CoronaAmpel.Contract\Mesi.Covid.Austria.CoronaAmpel.Contract.csproj" />
       <ProjectReference Include="..\Mesi.Covid.Austria.CoronaAmpel.Data\Mesi.Covid.Austria.CoronaAmpel.Data.csproj" />
+      <ProjectReference Include="..\Mesi.Covid.Austria.CoronaAmpel.Telegram.Data\Mesi.Covid.Austria.CoronaAmpel.Telegram.Data.csproj" />
       <ProjectReference Include="..\Mesi.Covid.Austria.CoronaAmpel\Mesi.Covid.Austria.CoronaAmpel.csproj" />
     </ItemGroup>
 

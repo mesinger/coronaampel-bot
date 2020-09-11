@@ -2,7 +2,7 @@
 {
     public class CoronaAmpelOptions
     {
-        public string BaseUri { get; set; } = string.Empty;
-        public string DataEndpoint { get; set; } = string.Empty;
+        public string BaseUrl { get; set; } = null!;
+        public string DataEndpoint { get; set; } = null!;
     }
 }

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesi.Covid.Austria.CoronaAm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender", "src\Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender\Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender.csproj", "{8181E273-D29B-4946-9C29-2AB031E12343}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesi.Covid.Austria.CoronaAmpel.Telegram.Data", "src\Mesi.Covid.Austria.CoronaAmpel.Telegram.Data\Mesi.Covid.Austria.CoronaAmpel.Telegram.Data.csproj", "{22B05C88-E9CE-4779-AF06-0D5B990A6E60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,18 @@ Global
 		{8181E273-D29B-4946-9C29-2AB031E12343}.Release|x64.Build.0 = Release|Any CPU
 		{8181E273-D29B-4946-9C29-2AB031E12343}.Release|x86.ActiveCfg = Release|Any CPU
 		{8181E273-D29B-4946-9C29-2AB031E12343}.Release|x86.Build.0 = Release|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Debug|x64.Build.0 = Debug|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Debug|x86.Build.0 = Debug|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Release|x64.ActiveCfg = Release|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Release|x64.Build.0 = Release|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Release|x86.ActiveCfg = Release|Any CPU
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C9F8B72C-CEF3-47AF-847D-3131E7223C37} = {5FDBF93C-3869-48E6-B086-1354E329FC8D}
@@ -97,5 +111,6 @@ Global
 		{A497C3E2-7336-4A3B-97EC-E87D6988B92D} = {5FDBF93C-3869-48E6-B086-1354E329FC8D}
 		{BB7F11F0-D5C6-4034-8609-D1FDEB776649} = {8D1B0BF8-D2FC-47F1-AB1C-C734A8BDC5FF}
 		{8181E273-D29B-4946-9C29-2AB031E12343} = {5FDBF93C-3869-48E6-B086-1354E329FC8D}
+		{22B05C88-E9CE-4779-AF06-0D5B990A6E60} = {5FDBF93C-3869-48E6-B086-1354E329FC8D}
 	EndGlobalSection
 EndGlobal

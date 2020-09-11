@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Mesi.Covid.Austria.CoronaAmpel.Contract.Data;
 using Mesi.Covid.Austria.CoronaAmpel.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -9,7 +10,7 @@ namespace Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender
     {
         static async Task Main(string[] args)
         {
-            var startup = new Startup();
+            var startup = new Startup(args);
             
             startup.ConfigureLogging();
 
@@ -24,7 +25,10 @@ namespace Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender
 
             var communeStatus = await getCoronaStopLightDataForCommune.GetCommuneStatus("701");
 
-            return;
+            var messageService = serviceProvider.GetRequiredService<ICoronaStopLightMessageService>();
+            await messageService.SendCommuneStatus(communeStatus);
+
+            logger.LogInformation("Finished");
         }
     }
 }
