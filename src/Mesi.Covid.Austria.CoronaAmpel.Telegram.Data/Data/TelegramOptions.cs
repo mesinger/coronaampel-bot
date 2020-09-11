@@ -6,6 +6,5 @@
         public string AccessToken { get; set; } = null!;
         public string ChatId { get; set; } = null!;
         public string ParseMode { get; set; } = null!;
-        public string Format { get; set; } = null!;
     }
 }

@@ -21,8 +21,13 @@ namespace Mesi.Covid.Austria.CoronaAmpel.Telegram.Data.Data
         private readonly ILogger<CoronaStopLightTelegramMessageService> _logger;
         private readonly TelegramOptions _telegramOptions;
         private readonly LocalizationOptions _localizationOptions;
+        private readonly MessageOptions _messageOptions;
 
-        public CoronaStopLightTelegramMessageService(HttpClient httpClient, ICoronaStopLightLocalizationService localizationService, IOptions<TelegramOptions> telegramOptions, IOptions<LocalizationOptions> localizationOptions,
+        public CoronaStopLightTelegramMessageService(HttpClient httpClient,
+            ICoronaStopLightLocalizationService localizationService, 
+            IOptions<TelegramOptions> telegramOptions,
+            IOptions<LocalizationOptions> localizationOptions,
+            IOptions<MessageOptions> messageOptions,
             ILogger<CoronaStopLightTelegramMessageService> logger)
         {
             _httpClient = httpClient;
@@ -30,12 +35,13 @@ namespace Mesi.Covid.Austria.CoronaAmpel.Telegram.Data.Data
             _logger = logger;
             _telegramOptions = telegramOptions.Value;
             _localizationOptions = localizationOptions.Value;
+            _messageOptions = messageOptions.Value;
         }
 
         /// <inheritdoc />
         public async Task SendCommuneStatus(CommuneCoronaStopLightStatus status)
         {
-            var vm = new CommuneCoronaStopLightStatusViewModel(_telegramOptions.ChatId, _telegramOptions.Format, _localizationService.GetForLevelAndLanguage(status.WarningLevel, _localizationOptions.Culture), _telegramOptions.ParseMode);
+            var vm = new CommuneCoronaStopLightStatusViewModel(_telegramOptions.ChatId, _messageOptions.Format, _localizationService.GetForLevelAndLanguage(status.WarningLevel, _localizationOptions.Culture), _telegramOptions.ParseMode);
 
             var response = await _httpClient.PostAsync(
                 $"{_telegramOptions.ApiBaseUrl}bot{_telegramOptions.AccessToken}/sendMessage",

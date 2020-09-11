@@ -56,6 +56,7 @@ namespace Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender
             services.Configure<CoronaAmpelOptions>(_configuration.GetSection("CoronaAmpelData"));
             services.Configure<TelegramOptions>(_configuration.GetSection("Telegram"));
             services.Configure<LocalizationOptions>(_configuration.GetSection("Localization"));
+            services.Configure<MessageOptions>(_configuration.GetSection("Message"));
 
             return services.BuildServiceProvider();
         }
