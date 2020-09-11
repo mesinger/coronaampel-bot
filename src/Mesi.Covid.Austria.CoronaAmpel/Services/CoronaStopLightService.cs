@@ -20,7 +20,7 @@ namespace Mesi.Covid.Austria.CoronaAmpel.Services
         }
 
         /// <inheritdoc />
-        public async Task<CommuneCoronaStopLightStatus> GetCommuneStatus(string communeId)
+        public async Task<CommuneCoronaStopLightStatus?> GetCommuneStatus(string communeId)
         {
             var status = await _coronaStopLightRepository.GetByCommuneId(communeId);
 

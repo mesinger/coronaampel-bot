@@ -13,6 +13,6 @@ namespace Mesi.Covid.Austria.CoronaAmpel.Services
         /// </summary>
         /// <param name="communeId"></param>
         /// <returns></returns>
-        Task<CommuneCoronaStopLightStatus> GetCommuneStatus(string communeId);
+        Task<CommuneCoronaStopLightStatus?> GetCommuneStatus(string communeId);
     }
 }

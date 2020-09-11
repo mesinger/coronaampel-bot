@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Mesi.Covid.Austria.CoronaAmpel.Contract.Data;
 using Mesi.Covid.Austria.CoronaAmpel.Contract.Localization;
@@ -57,6 +56,7 @@ namespace Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender
             services.Configure<TelegramOptions>(_configuration.GetSection("Telegram"));
             services.Configure<LocalizationOptions>(_configuration.GetSection("Localization"));
             services.Configure<MessageOptions>(_configuration.GetSection("Message"));
+            services.Configure<CommuneOptions>(_configuration.GetSection("Commune"));
 
             return services.BuildServiceProvider();
         }
