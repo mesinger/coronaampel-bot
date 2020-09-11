@@ -10,6 +10,6 @@ namespace Mesi.Covid.Austria.CoronaAmpel.Data.Models
         public DateTime Timestamp { get; set; }
 
         [JsonProperty("Warnstufen")]
-        public IEnumerable<CoronaStopLightWarningLevel> WarningLevels { get; set; }
+        public IEnumerable<CoronaStopLightWarningLevel> WarningLevels { get; set; } = null!;
     }
 }

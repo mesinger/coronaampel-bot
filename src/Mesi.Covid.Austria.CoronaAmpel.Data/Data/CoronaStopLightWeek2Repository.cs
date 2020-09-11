@@ -21,30 +21,30 @@ namespace Mesi.Covid.Austria.CoronaAmpel.Data.Data
     public class CoronaStopLightWeek2Repository : ICoronaStopLightRepository
     {
         private readonly HttpClient _httpClient;
-        private readonly IOptions<AustrianGovSettings> _governmentSettings;
+        private readonly CoronaAmpelOptions _coronaAmpelOptions;
         private readonly ILogger<CoronaStopLightWeek2Repository> _logger;
 
-        public CoronaStopLightWeek2Repository(HttpClient httpClient, IOptions<AustrianGovSettings> governmentSettings, ILogger<CoronaStopLightWeek2Repository> logger)
+        public CoronaStopLightWeek2Repository(HttpClient httpClient, IOptions<CoronaAmpelOptions> coronaAmpelOptions, ILogger<CoronaStopLightWeek2Repository> logger)
         {
             _httpClient = httpClient;
-            _governmentSettings = governmentSettings;
+            _coronaAmpelOptions = coronaAmpelOptions.Value;
             _logger = logger;
         }
         
         /// <inheritdoc />
         public async Task<CommuneCoronaStopLightStatus?> GetByCommuneId(string communeId)
         {
-            var response = await _httpClient.GetStringAsync(_governmentSettings.Value.CoronaStopLightEndpoint);
+            var response = await _httpClient.GetStringAsync(_coronaAmpelOptions.DataEndpoint);
             var data = JsonConvert.DeserializeObject<IEnumerable<CoronaStopLightEntry>>(response)?.ToList();
 
-            if (data == null || data.Any())
+            if (data == null || !data.Any())
             {
                 _logger.LogWarning("Unable to get data for CoronaAmpel");
                 return null;
             }
 
-            var mostRecentEntries = data.OrderBy(entry => entry.Timestamp).FirstOrDefault();
-            var communeEntry = mostRecentEntries.WarningLevels.FirstOrDefault(entry => entry.CommuneId == communeId);
+            var mostRecentEntry = data.OrderByDescending(entry => entry.Timestamp).FirstOrDefault();
+            var communeEntry = mostRecentEntry.WarningLevels.FirstOrDefault(entry => entry.CommuneId == communeId);
 
             if (communeEntry == null)
             {
