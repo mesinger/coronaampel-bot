@@ -5,9 +5,9 @@
     - name: clone repo
       git:
         repo: https://github.com/mesinger/coronaampel-bot.git
-        dest: ~/coronaampel-bot
+        dest: /home/pi/src/coronaampel-bot
         update: yes
     
-    # - name: publish software
-    #   shell: dotnet publish /home/pi/coronaampel-bot/coronaampel-bot.sln -c release -r linux-arm64 -o /home/pi/bin/coronaampel-bot
+    - name: publish
+      shell: /usr/share/dotnet/dotnet publish /home/pi/src/coronaampel-bot/src/Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender/Mesi.Covid.Austria.CoronaAmpel.TelegramBotSender.csproj -c Release -r linux-arm --self-contained -o /home/pi/bin/coronaampel-bot
   
