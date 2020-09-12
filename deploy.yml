@@ -1,0 +1,13 @@
+---
+  - hosts: pi
+    remote_user: pi
+    tasks:
+    - name: clone repo
+      git:
+        repo: https://github.com/mesinger/coronaampel-bot.git
+        dest: ~/coronaampel-bot
+        update: yes
+    
+    # - name: publish software
+    #   shell: dotnet publish /home/pi/coronaampel-bot/coronaampel-bot.sln -c release -r linux-arm64 -o /home/pi/bin/coronaampel-bot
+  
