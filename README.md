@@ -1,10 +1,10 @@
 # coronaampel-bot
 
-Receive current CoronaAmpel values for your bezirk.
+Receive current CoronaAmpel values for your bezirk on Telegram.
 
 ## Usage
 ```sh
-dotnet run Telegram:AccessToken="yourtelegramaccesstoken" Telegram:ChatId="yourtelegramchatid" Message:Format="Die Ampel in Wien ist auf {0}" Commune:Id="123"
+dotnet run Telegram:AccessToken="yourtelegramaccesstoken" Telegram:ChatId="yourtelegramchatid" Message:Format="Die Ampel in Wien ist auf {0}" Commune:Id="9"
 ```
 
 ## Data provided by
